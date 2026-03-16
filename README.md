@@ -1,36 +1,40 @@
-# idomarketing
+# I DO MARKETING
 
-Luxury digital agency landing — Next.js 14+, Tailwind CSS, Framer Motion, Lenis.
+Премиальный лендинг цифрового агентства на Next.js 14+, Tailwind CSS, Framer Motion и Lenis.
 
-## Tech stack
+## Стек
 
 - **Next.js 16** (App Router)
 - **Tailwind CSS 4**
-- **Framer Motion** — animations, page transitions
-- **Lenis** — smooth scroll
-- **Lucide React** — icons
+- **Framer Motion** — анимации и переходы между страницами
+- **Lenis** — плавный скролл
+- **Lucide React** — иконки
 
-## Development
+## Локальный запуск
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+По умолчанию проект доступен по адресу [http://localhost:3000](http://localhost:3000).
 
-## Build (static export)
+## Сборка (статический экспорт)
 
 ```bash
 npm run build
 ```
 
-Output is in the `out/` directory (used for GitHub Pages).
+Готовый статический билд попадает в директорию `out/` и используется для GitHub Pages.
 
 ## GitHub Pages
 
-Site is published at: **https://n0b1esse.github.io/idomarketing/**
+Сайт публикуется по адресу: **https://n0b1esse.github.io/idomarketing/**.
 
-Deploy runs automatically on push to `main` via [GitHub Actions](.github/workflows/deploy-pages.yml).
+Деплой запускается автоматически при пуше в ветку `main` через workflow  
+[GitHub Actions](.github/workflows/deploy-pages.yml).
 
-To enable Pages in the repo: **Settings → Pages → Source**: “GitHub Actions”.
+Чтобы включить Pages в репозитории:
+
+1. Зайти в **Settings → Pages**.  
+2. В блоке **Build and deployment / Source** выбрать **GitHub Actions**.

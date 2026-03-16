@@ -21,7 +21,7 @@ export function ContactForm() {
       <div className="space-y-6">
         <div>
           <label htmlFor="name" className="block font-mono text-xs text-slate-500">
-            Name
+            Имя
           </label>
           <input
             id="name"
@@ -29,7 +29,7 @@ export function ContactForm() {
             type="text"
             required
             className="mt-2 w-full border-b border-white/10 bg-transparent py-3 font-sans text-white placeholder-slate-600 outline-none transition-colors focus:border-white/30"
-            placeholder="Your name"
+            placeholder="Как к вам обращаться"
           />
         </div>
         <div>
@@ -47,7 +47,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="message" className="block font-mono text-xs text-slate-500">
-            Message
+            Проект
           </label>
           <textarea
             id="message"
@@ -55,7 +55,7 @@ export function ContactForm() {
             rows={4}
             required
             className="mt-2 w-full resize-none border-b border-white/10 bg-transparent py-3 font-sans text-white placeholder-slate-600 outline-none transition-colors focus:border-white/30"
-            placeholder="Tell us about your project"
+            placeholder="Кратко опишите задачу, сроки и формат сотрудничества"
           />
         </div>
       </div>
@@ -67,9 +67,9 @@ export function ContactForm() {
             className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-6 py-3 font-mono text-sm text-black transition-opacity disabled:opacity-50 hover:bg-white/90"
             data-cursor-hover
           >
-            {status === "idle" && "Send message"}
-            {status === "sending" && "Sending…"}
-            {status === "done" && "Thank you"}
+            {status === "idle" && "Отправить заявку"}
+            {status === "sending" && "Отправляем…"}
+            {status === "done" && "Спасибо, получили"}
           </button>
         </MagneticButton>
       </div>

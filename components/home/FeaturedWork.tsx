@@ -34,9 +34,9 @@ export function FeaturedWork() {
     <section className="border-t border-white/10 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
-          <p className="font-mono text-sm text-slate-500">Selected work</p>
+          <p className="font-mono text-sm text-slate-500">Избранные проекты</p>
           <h2 className="mt-2 font-sans text-3xl font-semibold tracking-tight-custom text-white md:text-4xl">
-            Featured Work
+            Ключевые кейсы
           </h2>
         </ScrollReveal>
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -81,7 +81,7 @@ export function FeaturedWork() {
             className="inline-flex items-center gap-2 font-mono text-sm text-slate-500 transition-colors hover:text-white"
             data-cursor-hover
           >
-            View all case studies
+            Смотреть все кейсы
             <ArrowUpRight className="h-4 w-4" />
           </Link>
         </ScrollReveal>

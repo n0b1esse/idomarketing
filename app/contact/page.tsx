@@ -3,8 +3,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Mail, MapPin } from "lucide-react";
 
 export const metadata = {
-  title: "Contact | idomarketing",
-  description: "Get in touch for your next project.",
+  title: "Контакты | I DO MARKETING",
+  description: "Свяжитесь с нами, чтобы обсудить ваш проект.",
 };
 
 export default function ContactPage() {
@@ -13,12 +13,13 @@ export default function ContactPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-[1fr,1fr] lg:gap-24">
           <ScrollReveal>
-            <p className="font-mono text-sm text-slate-500">Get in touch</p>
+            <p className="font-mono text-sm text-slate-500">Связаться с нами</p>
             <h1 className="mt-2 font-sans text-4xl font-semibold tracking-tight-custom text-white md:text-5xl">
-              Let&apos;s talk
+              Обсудим ваш проект
             </h1>
             <p className="mt-4 max-w-md font-sans text-slate-500">
-              Whether you have a brief ready or just an idea, we&apos;d love to hear from you.
+              Заполните форму или напишите напрямую — вернёмся с ответом и
+              предложениями по формату работы.
             </p>
             <div className="mt-10 space-y-6">
               <a

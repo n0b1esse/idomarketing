@@ -8,24 +8,27 @@ import { Target, Palette, Code } from "lucide-react";
 const services = [
   {
     id: "strategy",
-    title: "Strategy",
+    title: "Стратегия",
     icon: Target,
-    short: "Brand and product strategy that aligns with business goals.",
-    full: "We define positioning, audience, and go-to-market so every decision downstream has a clear North Star. Research, workshops, and roadmaps tailored for premium brands.",
+    short: "Стратегия бренда и продукта, связанная с бизнес‑целями.",
+    full:
+      "Определяем позиционирование, аудиторию и роль цифровых каналов. Исследования, воркшопы и дорожные карты, на которые можно опираться при принятии решений.",
   },
   {
     id: "design",
-    title: "Design",
+    title: "Дизайн",
     icon: Palette,
-    short: "Visual and experience design that stands out.",
-    full: "From identity to UI/UX, we craft distinctive systems that feel cohesive and premium. Design systems, prototypes, and art direction for web and product.",
+    short: "Визуальный и UX‑дизайн, который выделяет бренд.",
+    full:
+      "От айдентики до продуктового UI/UX. Создаём цельные дизайн‑системы, прототипы и арт‑направление для цифровых продуктов и сайтов.",
   },
   {
     id: "development",
-    title: "Development",
+    title: "Разработка",
     icon: Code,
-    short: "High-performance, scalable digital products.",
-    full: "Modern stacks, clean architecture, and attention to performance and accessibility. We build websites, apps, and platforms that are fast, secure, and maintainable.",
+    short: "Высокопроизводительные и масштабируемые цифровые продукты.",
+    full:
+      "Современный стек, чистая архитектура и внимание к скорости и доступности. Разрабатываем сайты, сервисы и интерфейсы, которыми удобно пользоваться и просто поддерживать.",
   },
 ];
 

@@ -14,8 +14,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "idomarketing | Luxury Digital Agency",
-  description: "Ultra-premium digital experiences. Strategy, Design, Development.",
+  title: "I DO MARKETING — цифровое агентство",
+  description:
+    "Премиальные цифровые продукты и сайты для брендов: стратегия, дизайн, разработка.",
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="ru" className="scroll-smooth">
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[#000000] text-white`}>
         <Providers>{children}</Providers>
       </body>

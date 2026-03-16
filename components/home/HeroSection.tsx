@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const line1 = "We craft";
-const line2 = "digital experiences";
-const line3 = "that matter.";
+const line1 = "Мы создаём";
+const line2 = "цифровые впечатления";
+const line3 = "которые запоминаются.";
 
 export function HeroSection() {
   const [mounted, setMounted] = useState(false);
@@ -20,7 +20,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Luxury Digital Agency
+          Премиальное цифровое агентство
         </motion.p>
         <div className="mt-6 overflow-hidden">
           <motion.h1
@@ -42,7 +42,8 @@ export function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          Strategy, design, and development for brands that refuse to blend in.
+          Стратегия, дизайн и разработка для брендов, которые не хотят быть как
+          все.
         </motion.p>
       </div>
     </section>

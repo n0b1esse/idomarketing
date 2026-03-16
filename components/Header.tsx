@@ -7,10 +7,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/work", label: "Work" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Главная" },
+  { href: "/work", label: "Кейсы" },
+  { href: "/services", label: "Услуги" },
+  { href: "/contact", label: "Контакты" },
 ];
 
 export function Header() {
@@ -25,7 +25,7 @@ export function Header() {
           className="font-sans text-lg font-medium tracking-tight-custom text-white"
           data-cursor-hover
         >
-          idomarketing
+          I DO MARKETING
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (

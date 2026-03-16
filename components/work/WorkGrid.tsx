@@ -9,7 +9,7 @@ const caseStudies = [
   {
     id: "brand-x",
     title: "Brand X",
-    category: "Brand Identity & Web",
+    category: "Айдентика бренда и сайт",
     year: "2024",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
     aspect: "tall" as const,
@@ -17,7 +17,7 @@ const caseStudies = [
   {
     id: "luxury-resort",
     title: "Luxury Resort",
-    category: "Digital Experience",
+    category: "Цифровой опыт",
     year: "2024",
     image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80",
     aspect: "wide" as const,
@@ -25,7 +25,7 @@ const caseStudies = [
   {
     id: "fintech-app",
     title: "Fintech App",
-    category: "Product Design",
+    category: "Продуктовый дизайн",
     year: "2023",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     aspect: "square" as const,
@@ -33,7 +33,7 @@ const caseStudies = [
   {
     id: "fashion-house",
     title: "Fashion House",
-    category: "E‑commerce & CMS",
+    category: "E‑commerce и CMS",
     year: "2023",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
     aspect: "tall" as const,
@@ -41,7 +41,7 @@ const caseStudies = [
   {
     id: "automotive",
     title: "Automotive Group",
-    category: "Platform & Strategy",
+    category: "Платформа и стратегия",
     year: "2023",
     image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80",
     aspect: "wide" as const,
@@ -49,7 +49,7 @@ const caseStudies = [
   {
     id: "health-tech",
     title: "Health Tech",
-    category: "Product & Design",
+    category: "Продукт и дизайн",
     year: "2022",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
     aspect: "square" as const,
