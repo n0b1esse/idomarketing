@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --muted: #64748b;
-  --border: rgba(255, 255, 255, 0.1);
+  /* Брендбук I DO MARKETING */
+  --background: #1d1b28;
+  --foreground: #f8f7fc;
+  --muted: rgba(248, 247, 252, 0.6);
+  --border: rgba(248, 247, 252, 0.1);
+  --accent: #4d6fd0;
+  --accent-secondary: #371492;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
@@ -41,13 +46,13 @@ body {
   letter-spacing: -0.05em;
 }
 
-/* Glassmorphism */
+/* Glassmorphism по брендбуку */
 .glass {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(29, 27, 40, 0.6);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
 
 .border-ultra {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(248, 247, 252, 0.1);
 }

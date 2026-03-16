@@ -18,11 +18,11 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-xl">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-[#f8f7fc]/10 bg-[#1d1b28]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
         <Link
           href="/"
-          className="font-sans text-lg font-medium tracking-tight-custom text-white"
+          className="font-sans text-lg font-medium tracking-tight-custom text-[#f8f7fc]"
           data-cursor-hover
         >
           I DO MARKETING
@@ -32,8 +32,8 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-mono text-sm transition-colors hover:text-white ${
-                pathname === link.href ? "text-white" : "text-slate-500"
+              className={`font-mono text-sm transition-colors hover:text-[#f8f7fc] ${
+                pathname === link.href ? "text-[#f8f7fc]" : "text-[#f8f7fc]/60"
               }`}
               data-cursor-hover
             >
@@ -43,7 +43,7 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="md:hidden rounded border border-white/10 p-2 text-white"
+          className="md:hidden rounded border border-[#f8f7fc]/10 p-2 text-[#f8f7fc]"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
           data-cursor-hover
@@ -57,7 +57,7 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-50 bg-[#1d1b28]/95 backdrop-blur-xl md:hidden"
             onClick={() => setOpen(false)}
           >
             <motion.nav
@@ -72,7 +72,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`font-mono text-xl ${pathname === link.href ? "text-white" : "text-slate-500"}`}
+                  className={`font-mono text-xl ${pathname === link.href ? "text-[#f8f7fc]" : "text-[#f8f7fc]/60"}`}
                 >
                   {link.label}
                 </Link>

@@ -70,7 +70,7 @@ export function WorkGrid() {
           <ScrollReveal key={item.id} delay={i * 0.08}>
             <Link
               href={`#${item.id}`}
-              className={`group relative block overflow-hidden rounded-lg border border-white/10 bg-white/5 backdrop-blur-xl transition-colors hover:border-white/20 ${aspectClasses[item.aspect]}`}
+              className={`group relative block overflow-hidden rounded-lg border border-[#f8f7fc]/10 bg-[#f8f7fc]/5 backdrop-blur-xl transition-colors hover:border-[#4d6fd0]/50 ${aspectClasses[item.aspect]}`}
               data-cursor-hover
             >
               <div className="relative h-full min-h-[280px] w-full md:min-h-full">
@@ -81,15 +81,15 @@ export function WorkGrid() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1d1b28]/95 via-[#1d1b28]/30 to-transparent" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6">
-                  <p className="font-mono text-xs text-slate-400">{item.category}</p>
-                  <h2 className="mt-1 font-sans text-2xl font-semibold tracking-tight-custom text-white">
+                  <p className="font-mono text-xs text-[#f8f7fc]/60">{item.category}</p>
+                  <h2 className="mt-1 font-sans text-2xl font-semibold tracking-tight-custom text-[#f8f7fc]">
                     {item.title}
                   </h2>
-                  <p className="mt-1 font-mono text-xs text-slate-500">{item.year}</p>
-                  <span className="mt-4 inline-flex w-fit rounded-full border border-white/10 p-2 transition-colors group-hover:border-white/20">
-                    <ArrowUpRight className="h-4 w-4 text-white" />
+                  <p className="mt-1 font-mono text-xs text-[#f8f7fc]/60">{item.year}</p>
+                  <span className="mt-4 inline-flex w-fit rounded-full border border-[#f8f7fc]/10 p-2 transition-colors group-hover:border-[#4d6fd0]">
+                    <ArrowUpRight className="h-4 w-4 text-[#f8f7fc]" />
                   </span>
                 </div>
               </div>

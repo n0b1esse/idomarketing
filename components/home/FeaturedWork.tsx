@@ -31,11 +31,11 @@ const featured = [
 
 export function FeaturedWork() {
   return (
-    <section className="border-t border-white/10 py-24">
+    <section className="border-t border-[#f8f7fc]/10 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
-          <p className="font-mono text-sm text-slate-500">Избранные проекты</p>
-          <h2 className="mt-2 font-sans text-3xl font-semibold tracking-tight-custom text-white md:text-4xl">
+          <p className="font-mono text-sm text-[#f8f7fc]/60">Избранные проекты</p>
+          <h2 className="mt-2 font-sans text-3xl font-semibold tracking-tight-custom text-[#f8f7fc] md:text-4xl">
             Ключевые кейсы
           </h2>
         </ScrollReveal>
@@ -44,7 +44,7 @@ export function FeaturedWork() {
             <ScrollReveal key={item.slug} delay={i * 0.1}>
               <Link
                 href={`/work#${item.slug}`}
-                className="group relative block overflow-hidden rounded-lg border border-white/10 bg-white/5 backdrop-blur-xl transition-colors hover:border-white/20"
+                className="group relative block overflow-hidden rounded-lg border border-[#f8f7fc]/10 bg-[#f8f7fc]/5 backdrop-blur-xl transition-colors hover:border-[#4d6fd0]/50"
                 data-cursor-hover
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -55,21 +55,21 @@ export function FeaturedWork() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1d1b28]/80 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 </div>
-                <div className="border-t border-white/10 p-6">
+                <div className="border-t border-[#f8f7fc]/10 p-6">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="font-mono text-xs text-slate-500">{item.category}</p>
-                      <h3 className="mt-1 font-sans text-xl font-medium tracking-tight-custom text-white">
+                      <p className="font-mono text-xs text-[#f8f7fc]/60">{item.category}</p>
+                      <h3 className="mt-1 font-sans text-xl font-medium tracking-tight-custom text-[#f8f7fc]">
                         {item.title}
                       </h3>
                     </div>
-                    <span className="rounded-full border border-white/10 p-2 transition-colors group-hover:border-white/20">
-                      <ArrowUpRight className="h-4 w-4 text-white" />
+                    <span className="rounded-full border border-[#f8f7fc]/10 p-2 transition-colors group-hover:border-[#4d6fd0]">
+                      <ArrowUpRight className="h-4 w-4 text-[#f8f7fc]" />
                     </span>
                   </div>
-                  <p className="mt-2 font-mono text-xs text-slate-500">{item.year}</p>
+                  <p className="mt-2 font-mono text-xs text-[#f8f7fc]/60">{item.year}</p>
                 </div>
               </Link>
             </ScrollReveal>
@@ -78,7 +78,7 @@ export function FeaturedWork() {
         <ScrollReveal className="mt-12 text-center">
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 font-mono text-sm text-slate-500 transition-colors hover:text-white"
+            className="inline-flex items-center gap-2 font-mono text-sm text-[#f8f7fc]/60 transition-colors hover:text-[#4d6fd0]"
             data-cursor-hover
           >
             Смотреть все кейсы

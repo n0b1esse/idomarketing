@@ -16,11 +16,11 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10"
+      className="rounded-xl border border-[#f8f7fc]/10 bg-[#f8f7fc]/5 p-8 backdrop-blur-xl md:p-10"
     >
       <div className="space-y-6">
         <div>
-          <label htmlFor="name" className="block font-mono text-xs text-slate-500">
+          <label htmlFor="name" className="block font-mono text-xs text-[#f8f7fc]/60">
             Имя
           </label>
           <input
@@ -28,12 +28,12 @@ export function ContactForm() {
             name="name"
             type="text"
             required
-            className="mt-2 w-full border-b border-white/10 bg-transparent py-3 font-sans text-white placeholder-slate-600 outline-none transition-colors focus:border-white/30"
+            className="mt-2 w-full border-b border-[#f8f7fc]/10 bg-transparent py-3 font-sans text-[#f8f7fc] placeholder-[#f8f7fc]/40 outline-none transition-colors focus:border-[#4d6fd0]"
             placeholder="Как к вам обращаться"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block font-mono text-xs text-slate-500">
+          <label htmlFor="email" className="block font-mono text-xs text-[#f8f7fc]/60">
             Email
           </label>
           <input
@@ -41,12 +41,12 @@ export function ContactForm() {
             name="email"
             type="email"
             required
-            className="mt-2 w-full border-b border-white/10 bg-transparent py-3 font-sans text-white placeholder-slate-600 outline-none transition-colors focus:border-white/30"
+            className="mt-2 w-full border-b border-[#f8f7fc]/10 bg-transparent py-3 font-sans text-[#f8f7fc] placeholder-[#f8f7fc]/40 outline-none transition-colors focus:border-[#4d6fd0]"
             placeholder="you@company.com"
           />
         </div>
         <div>
-          <label htmlFor="message" className="block font-mono text-xs text-slate-500">
+          <label htmlFor="message" className="block font-mono text-xs text-[#f8f7fc]/60">
             Проект
           </label>
           <textarea
@@ -54,7 +54,7 @@ export function ContactForm() {
             name="message"
             rows={4}
             required
-            className="mt-2 w-full resize-none border-b border-white/10 bg-transparent py-3 font-sans text-white placeholder-slate-600 outline-none transition-colors focus:border-white/30"
+            className="mt-2 w-full resize-none border-b border-[#f8f7fc]/10 bg-transparent py-3 font-sans text-[#f8f7fc] placeholder-[#f8f7fc]/40 outline-none transition-colors focus:border-[#4d6fd0]"
             placeholder="Кратко опишите задачу, сроки и формат сотрудничества"
           />
         </div>
@@ -64,7 +64,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-6 py-3 font-mono text-sm text-black transition-opacity disabled:opacity-50 hover:bg-white/90"
+            className="inline-flex items-center justify-center rounded-full border border-[#4d6fd0] bg-[#4d6fd0] px-6 py-3 font-mono text-sm text-[#f8f7fc] transition-opacity disabled:opacity-50 hover:bg-[#3d5fc0]"
             data-cursor-hover
           >
             {status === "idle" && "Отправить заявку"}

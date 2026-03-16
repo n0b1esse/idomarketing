@@ -67,10 +67,10 @@ export function CustomCursor() {
       style={{ willChange: "transform" }}
     >
       <motion.div
-        className="flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-xl"
+        className="flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#f8f7fc]/10 bg-[#f8f7fc]/5 backdrop-blur-xl"
         animate={{
           scale: isHovering ? 2 : 1,
-          borderColor: isHovering ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)",
+          borderColor: isHovering ? "rgba(77,111,208,0.6)" : "rgba(248,247,252,0.1)",
         }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
       >
@@ -78,7 +78,7 @@ export function CustomCursor() {
           <motion.span
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="h-1.5 w-1.5 rounded-full bg-white"
+            className="h-1.5 w-1.5 rounded-full bg-[#4d6fd0]"
           />
         )}
       </motion.div>
