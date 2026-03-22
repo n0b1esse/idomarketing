@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { HERO_STATS } from "@/lib/data/site";
 import { Button } from "@/components/ui/Button";
@@ -13,19 +12,18 @@ export function HeroBanner() {
         aria-hidden
       />
       <div className="relative mx-auto flex max-w-[1440px] flex-col items-center px-4 pb-20 pt-12 text-center sm:px-6 lg:px-8 lg:pt-16">
-        <RevealSection className="w-full">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+        <RevealSection className="w-full max-w-4xl">
+          <p className="mx-auto max-w-2xl text-sm font-medium uppercase tracking-[0.16em] text-[var(--color-accent)]">
             Маркетинг, который продаёт
           </p>
-          <h1 className="font-heading mt-4 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight text-[var(--color-text)] sm:text-5xl md:text-6xl lg:text-7xl">
-            Запускаем спрос.
-            <br />
-            <span className="text-[var(--color-muted)]">Масштабируем результат.</span>
+          <h1 className="font-heading mx-auto mt-5 max-w-[min(100%,40rem)] text-balance text-4xl font-semibold leading-[1.12] tracking-[-0.02em] text-[var(--color-text)] sm:text-5xl sm:leading-[1.1] md:mt-6 md:text-6xl md:leading-[1.08] lg:text-7xl lg:leading-[1.06]">
+            <span className="block">Запускаем спрос.</span>
+            <span className="mt-2 block text-[var(--color-muted)] sm:mt-3">Масштабируем результат.</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-[var(--color-muted)] md:mt-7 md:text-lg md:leading-relaxed">
             Performance‑кампании, SEO и контент с единой аналитикой. Показываем цифры, а не «охваты ради охватов».
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:mt-11 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
             <Button href="/contacts" variant="primary" className="min-w-[200px] justify-center px-8 py-3 text-base">
               Оставить заявку
               <ArrowRight className="h-5 w-5" />
@@ -34,10 +32,10 @@ export function HeroBanner() {
               Смотреть кейсы
             </Button>
           </div>
-          <div className="mt-14 grid w-full max-w-3xl grid-cols-1 gap-6 border-t border-[var(--color-border)] pt-10 sm:grid-cols-3">
+          <div className="mx-auto mt-14 grid w-full max-w-3xl grid-cols-1 gap-8 border-t border-[var(--color-border)] pt-10 sm:grid-cols-3 sm:gap-6">
             {HERO_STATS.map((s) => (
-              <div key={s.label}>
-                <p className="font-heading text-3xl font-semibold text-[var(--color-text)] md:text-4xl">
+              <div key={s.label} className="text-center">
+                <p className="font-heading text-3xl font-semibold tabular-nums text-[var(--color-text)] md:text-4xl">
                   {typeof s.value === "number" && s.value % 1 !== 0 ? (
                     <AnimatedCounter value={s.value} suffix={s.suffix} decimals={1} />
                   ) : (

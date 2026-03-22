@@ -10,7 +10,7 @@ export function AnimatedCounter({
   value,
   suffix = "",
   prefix = "",
-  duration = 1400,
+  duration = 820,
   decimals = 0,
 }: {
   value: number;

@@ -52,29 +52,27 @@ body {
 }
 
 .font-heading {
-  font-family: var(--font-syne), system-ui, sans-serif;
+  font-family: var(--font-heading);
 }
 
 main {
   display: block;
 }
 
-.font-heading {
-  font-family: var(--font-heading);
-}
-
 /* Reveal (IntersectionObserver toggles .is-visible) */
 .reveal {
   opacity: 0;
-  transform: translateY(1.5rem);
+  transform: translate3d(0, 0.6rem, 0);
   transition:
-    opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
 }
 
 /* Logo marquee */

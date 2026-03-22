@@ -51,18 +51,18 @@ export function Header() {
       </div>
       {open && (
         <div
-          className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-[100] bg-black/45 backdrop-blur-md md:hidden"
           role="presentation"
           onClick={() => setOpen(false)}
         />
       )}
       <div
-        className={`fixed inset-y-0 right-0 z-[70] w-[min(100%,20rem)] transform border-l border-[var(--color-border)] bg-[var(--color-surface-elevated)] shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed inset-y-0 right-0 z-[110] flex w-[min(100%,20rem)] flex-col transform border-l border-white/10 bg-[rgba(13,13,13,0.52)] shadow-2xl backdrop-blur-2xl backdrop-saturate-150 transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
           open ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}
       >
-        <div className="flex items-center justify-between border-b border-[var(--color-border)] p-4">
-          <span className="font-heading font-semibold">Меню</span>
+        <div className="flex shrink-0 items-center justify-between border-b border-white/10 bg-[rgba(10,10,10,0.35)] px-4 py-4 backdrop-blur-sm">
+          <span className="font-heading font-semibold text-[var(--color-text)]">Меню</span>
           <button
             type="button"
             className="rounded-lg border border-[var(--color-border)] p-2"
@@ -72,22 +72,25 @@ export function Header() {
             <X className="h-5 w-5" />
           </button>
         </div>
-        <nav className="flex flex-col gap-1 p-4" aria-label="Мобильное меню">
+        <nav
+          className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain p-4"
+          aria-label="Мобильное меню"
+        >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className={`rounded-lg px-3 py-3 text-base font-medium ${
+              className={`rounded-lg px-3 py-3 text-base font-medium transition-colors ${
                 pathname === link.href
-                  ? "bg-[var(--color-accent-muted)] text-[var(--color-accent)]"
-                  : "text-[var(--color-text)]"
+                  ? "bg-[rgba(34,211,238,0.12)] text-[var(--color-accent)]"
+                  : "text-[var(--color-text)] hover:bg-white/5"
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <Button href="/contacts" variant="primary" className="mt-4 w-full justify-center">
+          <Button href="/contacts" variant="primary" className="mt-4 w-full shrink-0 justify-center">
             Получить консультацию
           </Button>
         </nav>
