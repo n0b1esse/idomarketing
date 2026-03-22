@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Manrope, Unbounded } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+const unbounded = Unbounded({
+  variable: "--font-syne",
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
+const manrope = Manrope({
+  variable: "--font-dm-sans",
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "I DO MARKETING — цифровое агентство",
+  title: {
+    default: "I DO MARKETING — маркетинговое агентство",
+    template: "%s | I DO MARKETING",
+  },
   description:
-    "Премиальные цифровые продукты и сайты для брендов: стратегия, дизайн, разработка.",
+    "Performance‑маркетинг, SEO, SMM и дизайн. Управляемый рост заявок и прозрачная аналитика.",
 };
 
 export default function RootLayout({
@@ -26,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className="scroll-smooth">
-      <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[#1d1b28] text-[#f8f7fc]`}>
+      <body className={`${unbounded.variable} ${manrope.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>

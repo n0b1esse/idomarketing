@@ -2,16 +2,17 @@
 
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { LenisProvider } from "./LenisProvider";
-import { CustomCursor } from "./CustomCursor";
-import { Header } from "./Header";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { LenisProvider } from "@/components/LenisProvider";
+import { MessengerWidget } from "@/components/widgets/MessengerWidget";
+import { ScrollToTop } from "@/components/widgets/ScrollToTop";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
     <LenisProvider>
-      <CustomCursor />
       <Header />
       <AnimatePresence mode="wait">
         <motion.div
@@ -19,11 +20,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.35, ease: "easeInOut" }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           {children}
         </motion.div>
       </AnimatePresence>
+      <Footer />
+      <MessengerWidget />
+      <ScrollToTop />
     </LenisProvider>
   );
 }

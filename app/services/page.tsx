@@ -1,27 +1,35 @@
-import { ServicesSection } from "@/components/services/ServicesSection";
-import { ScrollReveal } from "@/components/ScrollReveal";
+import { BridgePortfolio } from "@/components/sections/BridgePortfolio";
+import { CTABlock } from "@/components/sections/CTABlock";
+import { PageHero } from "@/components/sections/PageHero";
+import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { ServicesTabs } from "@/components/sections/ServicesTabs";
 
 export const metadata = {
-  title: "Услуги | I DO MARKETING",
-  description: "Стратегия, дизайн и разработка цифровых продуктов для брендов.",
+  title: "Услуги",
+  description: "Реклама, SEO, SMM и дизайн — полный цикл с прозрачной аналитикой.",
 };
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen pt-24">
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <ScrollReveal>
-          <p className="font-mono text-sm text-[#f8f7fc]/60">Что мы делаем</p>
-          <h1 className="mt-2 font-sans text-4xl font-semibold tracking-tight-custom text-[#f8f7fc] md:text-5xl">
-            Услуги
-          </h1>
-          <p className="mt-4 max-w-2xl font-sans text-[#f8f7fc]/60">
-            Полный цикл — от стратегии и концепции до запуска и поддержки
-            цифрового продукта.
-          </p>
-        </ScrollReveal>
-      </section>
-      <ServicesSection />
+    <main className="min-h-screen">
+      <PageHero
+        eyebrow="Услуги"
+        title="Рост за счёт системы, а не случайных тестов"
+        subtitle="Выберите направление — покажем состав работ, сроки и ожидаемый эффект."
+        breadcrumbs={[
+          { label: "Главная", href: "/" },
+          { label: "Услуги" },
+        ]}
+      />
+      <ServicesTabs />
+      <ProcessTimeline />
+      <CTABlock
+        eyebrow="Бесплатный аудит"
+        title="Получите разбор воронки и медиамикса"
+        subtitle="Короткий созвон и чек-лист точек роста — без обязательств."
+        formVariant="short"
+      />
+      <BridgePortfolio />
     </main>
   );
 }
