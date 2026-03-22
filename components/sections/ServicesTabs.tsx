@@ -22,7 +22,7 @@ export function ServicesTabs() {
                 onClick={() => setTab(t.id)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   tab === t.id
-                    ? "bg-[var(--color-primary)] text-[#0a0a0a]"
+                    ? "bg-[var(--color-primary)] text-[var(--color-on-primary)]"
                     : "text-[var(--color-muted)] hover:text-[var(--color-text)]"
                 }`}
               >

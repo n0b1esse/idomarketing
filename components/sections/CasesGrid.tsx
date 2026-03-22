@@ -46,7 +46,7 @@ export function CasesGrid({ showFilters = true }: { showFilters?: boolean }) {
                   }}
                   className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                     filter === f.id
-                      ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[#0a0a0a]"
+                      ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-on-primary)]"
                       : "border-[var(--color-border)] text-[var(--color-muted)] hover:border-[var(--color-primary)]/50 hover:text-[var(--color-text)]"
                   }`}
                 >

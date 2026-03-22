@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #0d0d0d;
-  --color-surface: #141414;
-  --color-surface-elevated: #1a1a1a;
-  --color-text: #f5f5f5;
-  --color-muted: #a3a3a3;
-  --color-primary: #f97316;
-  --color-primary-hover: #ea580c;
-  --color-accent: #22d3ee;
-  --color-accent-muted: rgba(34, 211, 238, 0.15);
-  --color-border: rgba(245, 245, 245, 0.08);
-  --color-border-strong: rgba(245, 245, 245, 0.14);
+  /* I DO MARKETING — цвета из брендбука (основные + акценты) */
+  --color-bg: #1d1b28;
+  --color-surface: #232030;
+  --color-surface-elevated: #2a2740;
+  --color-text: #f8f7fc;
+  --color-muted: rgba(248, 247, 252, 0.62);
+  --color-primary: #4d6fd0;
+  --color-primary-hover: #3d5cbd;
+  --color-on-primary: #f8f7fc;
+  --color-accent: #371492;
+  --color-accent-muted: rgba(55, 20, 146, 0.2);
+  --color-border: rgba(248, 247, 252, 0.1);
+  --color-border-strong: rgba(248, 247, 252, 0.14);
   --shadow-card: 0 20px 50px -20px rgba(0, 0, 0, 0.65);
   --radius-lg: 1rem;
   --radius-xl: 1.25rem;

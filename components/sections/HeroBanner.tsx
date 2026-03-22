@@ -8,12 +8,12 @@ export function HeroBanner() {
   return (
     <section className="relative min-h-[min(100svh,56rem)] overflow-hidden pt-20">
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(249,115,22,0.18),transparent_55%),radial-gradient(ellipse_80%_50%_at_100%_50%,rgba(34,211,238,0.08),transparent_50%),linear-gradient(180deg,#0d0d0d_0%,#0a0a0a_100%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(77,111,208,0.2),transparent_55%),radial-gradient(ellipse_80%_50%_at_100%_50%,rgba(55,20,146,0.14),transparent_50%),linear-gradient(180deg,#1d1b28_0%,#181622_100%)]"
         aria-hidden
       />
       <div className="relative mx-auto flex max-w-[1440px] flex-col items-center px-4 pb-20 pt-12 text-center sm:px-6 lg:px-8 lg:pt-16">
         <RevealSection className="w-full max-w-4xl">
-          <p className="mx-auto max-w-2xl text-sm font-medium uppercase tracking-[0.16em] text-[var(--color-accent)]">
+          <p className="mx-auto max-w-2xl text-sm font-medium uppercase tracking-[0.16em] text-[var(--color-primary)]">
             Маркетинг, который продаёт
           </p>
           <h1 className="font-heading mx-auto mt-5 max-w-[min(100%,40rem)] text-balance text-4xl font-semibold leading-[1.12] tracking-[-0.02em] text-[var(--color-text)] sm:text-5xl sm:leading-[1.1] md:mt-6 md:text-6xl md:leading-[1.08] lg:text-7xl lg:leading-[1.06]">

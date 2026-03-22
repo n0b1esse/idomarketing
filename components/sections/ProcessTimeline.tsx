@@ -14,7 +14,7 @@ export function ProcessTimeline() {
             {PROCESS_STEPS.map((step, i) => (
               <RevealSection key={step.title}>
                 <li className="relative">
-                  <span className="absolute -left-[1.6rem] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-primary)] text-xs font-bold text-[#0a0a0a]">
+                  <span className="absolute -left-[1.6rem] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-primary)] text-xs font-bold text-[var(--color-on-primary)]">
                     {i + 1}
                   </span>
                   <h3 className="font-heading text-lg font-semibold text-[var(--color-text)]">{step.title}</h3>
@@ -28,7 +28,7 @@ export function ProcessTimeline() {
           {PROCESS_STEPS.map((step, i) => (
             <RevealSection key={step.title}>
               <div className="relative rounded-[var(--radius-xl)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 pt-10">
-                <span className="absolute left-6 top-0 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--color-primary)] text-sm font-bold text-[#0a0a0a]">
+                <span className="absolute left-6 top-0 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--color-primary)] text-sm font-bold text-[var(--color-on-primary)]">
                   {i + 1}
                 </span>
                 <h3 className="font-heading text-lg font-semibold">{step.title}</h3>

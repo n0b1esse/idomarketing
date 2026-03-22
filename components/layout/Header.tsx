@@ -63,7 +63,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className={`rounded-lg px-3 py-3 text-base font-medium transition-colors ${
                   pathname === link.href
-                    ? "bg-[rgba(34,211,238,0.12)] text-[var(--color-accent)]"
+                    ? "bg-[rgba(77,111,208,0.16)] text-[var(--color-primary)]"
                     : "text-[var(--color-text)] active:bg-white/10"
                 }`}
               >

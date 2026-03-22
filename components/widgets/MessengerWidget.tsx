@@ -32,7 +32,7 @@ export function MessengerWidget() {
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-primary)] text-[#0a0a0a] shadow-lg transition-transform hover:scale-105"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-primary)] text-[var(--color-on-primary)] shadow-lg transition-transform hover:scale-105"
         aria-label={expanded ? "Закрыть мессенджеры" : "Открыть мессенджеры"}
         aria-expanded={expanded}
       >
