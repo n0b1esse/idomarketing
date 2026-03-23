@@ -39,10 +39,7 @@ export function Button({
   const cls = `${base} ${variants[variant]} ${className}`.trim();
   if (href) {
     return (
-      <motion.span
-        className="inline-flex"
-        {...(reducedMotion ? {} : buttonTap)}
-      >
+      <motion.span className="inline-flex" {...(reducedMotion ? {} : buttonTap)}>
         <Link href={href} className={cls}>
           {children}
         </Link>
@@ -50,13 +47,10 @@ export function Button({
     );
   }
   return (
-    <motion.button
-      type={type}
-      className={cls}
-      {...(reducedMotion ? {} : buttonTap)}
-      {...rest}
-    >
-      {children}
-    </motion.button>
+    <motion.span className="inline-flex" {...(reducedMotion ? {} : buttonTap)}>
+      <button type={type} className={cls} {...rest}>
+        {children}
+      </button>
+    </motion.span>
   );
 }
