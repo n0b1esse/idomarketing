@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -13,6 +14,8 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { RevealSection } from "@/components/ui/RevealSection";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { fadeUp, scaleIn, staggerContainer } from "@/lib/motion";
 
 const INITIAL = 6;
 const STEP = 3;
@@ -25,6 +28,7 @@ function filterCases(filter: CaseFilter, cases: PortfolioCase[]) {
 export function CasesGrid({ showFilters = true }: { showFilters?: boolean }) {
   const [filter, setFilter] = useState<CaseFilter>("all");
   const [visible, setVisible] = useState(INITIAL);
+  const reducedMotion = useReducedMotion();
 
   const filtered = useMemo(() => filterCases(filter, PORTFOLIO_CASES), [filter]);
   const slice = filtered.slice(0, visible);
@@ -56,42 +60,53 @@ export function CasesGrid({ showFilters = true }: { showFilters?: boolean }) {
             </div>
           </RevealSection>
         )}
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {slice.map((item) => (
-            <RevealSection key={item.id}>
-              <Card className="overflow-hidden p-0">
-                <Link href={`/portfolio#${item.id}`} className="group block">
-                  <div className="relative aspect-[16/10] w-full overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="text-xs font-medium text-[var(--color-accent)]">{item.client}</p>
-                      <p className="text-xs text-[var(--color-muted)]">{item.service}</p>
-                      <h3 className="font-heading mt-2 text-lg font-semibold text-white">{item.title}</h3>
-                      <p className="mt-2 font-heading text-2xl font-semibold text-[var(--color-primary)]">
-                        {item.resultValue}
-                      </p>
-                      <p className="text-xs text-white/80">{item.resultLabel}</p>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={filter}
+            className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+            variants={reducedMotion ? {} : staggerContainer}
+            initial={reducedMotion ? false : "hidden"}
+            animate="visible"
+            exit={reducedMotion ? undefined : "hidden"}
+          >
+            {slice.map((item) => (
+              <motion.div key={item.id} variants={reducedMotion ? {} : fadeUp}>
+                <Card className="overflow-hidden p-0">
+                  <Link href={`/portfolio#${item.id}`} className="group block">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                      <motion.div variants={reducedMotion ? {} : scaleIn}>
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover transition duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                      </motion.div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <p className="text-xs font-medium text-[var(--color-accent)]">{item.client}</p>
+                        <p className="text-xs text-[var(--color-muted)]">{item.service}</p>
+                        <h3 className="font-heading mt-2 text-lg font-semibold text-white">{item.title}</h3>
+                        <p className="mt-2 font-heading text-2xl font-semibold text-[var(--color-primary)]">
+                          {item.resultValue}
+                        </p>
+                        <p className="text-xs text-white/80">{item.resultLabel}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between border-t border-[var(--color-border)] px-5 py-4">
-                    <span className="text-sm text-[var(--color-muted)]">Кейс</span>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)]">
-                      Читать кейс
-                      <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </div>
-                </Link>
-              </Card>
-            </RevealSection>
-          ))}
-        </div>
+                    <div className="flex items-center justify-between border-t border-[var(--color-border)] px-5 py-4">
+                      <span className="text-sm text-[var(--color-muted)]">Кейс</span>
+                      <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)]">
+                        Читать кейс
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
         {hasMore && (
           <div className="mt-10 flex justify-center">
             <Button type="button" variant="secondary" onClick={() => setVisible((v) => v + STEP)}>

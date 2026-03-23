@@ -1,9 +1,12 @@
 "use client";
 
 import { X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useCallback, type ReactNode } from "react";
 import { createPortal } from "react-dom";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { fadeIn, scaleIn } from "@/lib/motion";
 
 export function Modal({
   open,
@@ -18,6 +21,7 @@ export function Modal({
   children: ReactNode;
   wide?: boolean;
 }) {
+  const reducedMotion = useReducedMotion();
   const onKey = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -36,44 +40,56 @@ export function Modal({
     };
   }, [open, onKey]);
 
-  if (typeof document === "undefined" || !open) return null;
+  if (typeof document === "undefined") return null;
 
   return createPortal(
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-      role="dialog"
-      aria-modal="true"
-      aria-label={title ?? "Диалог"}
-    >
-      <button
-        type="button"
-        className="absolute inset-0 bg-black/75 backdrop-blur-sm"
-        aria-label="Закрыть"
-        onClick={onClose}
-      />
-      <div
-        className={`relative z-[101] max-h-[90vh] w-full overflow-auto rounded-[var(--radius-xl)] border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4 shadow-2xl md:p-6 ${
-          wide ? "max-w-4xl" : "max-w-lg"
-        }`}
-      >
-        <div className="mb-4 flex items-start justify-between gap-4">
-          {title ? (
-            <h2 className="font-heading text-lg font-semibold text-[var(--color-text)]">{title}</h2>
-          ) : (
-            <span />
-          )}
-          <button
+    <AnimatePresence>
+      {open && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label={title ?? "Диалог"}
+        >
+          <motion.button
             type="button"
+            className="absolute inset-0 bg-black/75 backdrop-blur-sm"
+            aria-label="Закрыть"
             onClick={onClose}
-            className="rounded-full border border-[var(--color-border)] p-2 text-[var(--color-muted)] transition-colors hover:text-[var(--color-text)]"
-            aria-label="Закрыть окно"
+            variants={reducedMotion ? {} : fadeIn}
+            initial={reducedMotion ? false : "hidden"}
+            animate="visible"
+            exit={reducedMotion ? undefined : "hidden"}
+          />
+          <motion.div
+            variants={reducedMotion ? {} : scaleIn}
+            initial={reducedMotion ? false : "hidden"}
+            animate="visible"
+            exit={reducedMotion ? undefined : "hidden"}
+            className={`relative z-[101] max-h-[90vh] w-full overflow-auto rounded-[var(--radius-xl)] border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4 shadow-2xl md:p-6 ${
+              wide ? "max-w-4xl" : "max-w-lg"
+            }`}
           >
-            <X className="h-5 w-5" />
-          </button>
+            <div className="mb-4 flex items-start justify-between gap-4">
+              {title ? (
+                <h2 className="font-heading text-lg font-semibold text-[var(--color-text)]">{title}</h2>
+              ) : (
+                <span />
+              )}
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-full border border-[var(--color-border)] p-2 text-[var(--color-muted)] transition-colors hover:text-[var(--color-text)]"
+                aria-label="Закрыть окно"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            {children}
+          </motion.div>
         </div>
-        {children}
-      </div>
-    </div>,
+      )}
+    </AnimatePresence>,
     document.body,
   );
 }

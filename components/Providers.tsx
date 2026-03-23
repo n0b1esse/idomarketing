@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, LazyMotion, domAnimation, motion } from "framer-motion";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { LenisProvider } from "@/components/LenisProvider";
@@ -12,22 +12,24 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <LenisProvider>
-      <Header />
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={pathname}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {children}
-        </motion.div>
-      </AnimatePresence>
-      <Footer />
-      <MessengerWidget />
-      <ScrollToTop />
-    </LenisProvider>
+    <LazyMotion features={domAnimation}>
+      <LenisProvider>
+        <Header />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={pathname}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
+        <Footer />
+        <MessengerWidget />
+        <ScrollToTop />
+      </LenisProvider>
+    </LazyMotion>
   );
 }

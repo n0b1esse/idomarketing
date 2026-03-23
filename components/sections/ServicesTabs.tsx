@@ -1,13 +1,17 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { SERVICES, SERVICE_TABS, type ServiceCategory } from "@/lib/data/site";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { RevealSection } from "@/components/ui/RevealSection";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { fadeIn, fadeRight, scaleIn, staggerContainerSlow } from "@/lib/motion";
 
 export function ServicesTabs() {
   const [tab, setTab] = useState<ServiceCategory>("ads");
+  const reducedMotion = useReducedMotion();
   const list = SERVICES.filter((s) => s.category === tab);
 
   return (
@@ -31,37 +35,49 @@ export function ServicesTabs() {
             ))}
           </div>
         </RevealSection>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {list.map((s) => (
-            <RevealSection key={s.id}>
-              <Card>
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-accent)]">
-                  <s.icon className="h-5 w-5" aria-hidden />
-                </span>
-                <h3 className="font-heading mt-4 text-xl font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm text-[var(--color-muted)]">{s.description}</p>
-                <ul className="mt-4 space-y-2 text-sm text-[var(--color-text)]">
-                  {s.bullets.map((b) => (
-                    <li key={b} className="flex gap-2">
-                      <span className="text-[var(--color-primary)]" aria-hidden>
-                        ✓
-                      </span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Button href="/contacts" variant="secondary">
-                    Подробнее
-                  </Button>
-                  <Button href="/contacts" variant="primary">
-                    Заказать
-                  </Button>
-                </div>
-              </Card>
-            </RevealSection>
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={tab}
+            className="mt-10 grid gap-6 md:grid-cols-2"
+            variants={reducedMotion ? {} : staggerContainerSlow}
+            initial={reducedMotion ? false : "hidden"}
+            animate="visible"
+            exit={reducedMotion ? undefined : "hidden"}
+          >
+            {list.map((s) => (
+              <motion.div key={s.id} variants={reducedMotion ? {} : fadeRight}>
+                <Card>
+                  <motion.span
+                    variants={reducedMotion ? {} : scaleIn}
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-accent)]"
+                  >
+                    <s.icon className="h-5 w-5" aria-hidden />
+                  </motion.span>
+                  <h3 className="font-heading mt-4 text-xl font-semibold">{s.title}</h3>
+                  <p className="mt-2 text-sm text-[var(--color-muted)]">{s.description}</p>
+                  <ul className="mt-4 space-y-2 text-sm text-[var(--color-text)]">
+                    {s.bullets.map((b) => (
+                      <motion.li key={b} className="flex gap-2" variants={reducedMotion ? {} : fadeIn}>
+                        <span className="text-[var(--color-primary)]" aria-hidden>
+                          ✓
+                        </span>
+                        {b}
+                      </motion.li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <Button href="/contacts" variant="secondary">
+                      Подробнее
+                    </Button>
+                    <Button href="/contacts" variant="primary">
+                      Заказать
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

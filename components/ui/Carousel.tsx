@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   useCallback,
@@ -9,6 +10,7 @@ import {
   type ReactNode,
   type TouchEvent,
 } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export function Carousel({
   children,
@@ -21,22 +23,19 @@ export function Carousel({
   autoPlayMs?: number;
   ariaLabel?: string;
 }) {
-  const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
-  const count = Array.isArray(children) ? children.length : 1;
+  const [direction, setDirection] = useState(1);
+  const reducedMotion = useReducedMotion();
+  const slides = Array.isArray(children) ? children : [children];
+  const count = slides.length;
 
   const scrollTo = useCallback(
     (i: number) => {
-      const el = trackRef.current;
-      if (!el) return;
       const clamped = Math.max(0, Math.min(count - 1, i));
-      const child = el.children[clamped] as HTMLElement | undefined;
-      if (child) {
-        el.scrollTo({ left: child.offsetLeft, behavior: "smooth" });
-      }
+      setDirection(clamped > index ? 1 : -1);
       setIndex(clamped);
     },
-    [count],
+    [count, index],
   );
 
   useEffect(() => {
@@ -44,9 +43,7 @@ export function Carousel({
     const id = window.setInterval(() => {
       setIndex((prev) => {
         const next = (prev + 1) % count;
-        const el = trackRef.current;
-        const child = el?.children[next] as HTMLElement | undefined;
-        if (el && child) el.scrollTo({ left: child.offsetLeft, behavior: "smooth" });
+        setDirection(1);
         return next;
       });
     }, autoPlayMs);
@@ -69,29 +66,24 @@ export function Carousel({
   return (
     <div className={`relative ${className}`}>
       <div
-        ref={trackRef}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="relative overflow-hidden pb-2"
         aria-roledescription="carousel"
         aria-label={ariaLabel}
         role="region"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
-        onScroll={(e) => {
-          const el = e.currentTarget;
-          const children = Array.from(el.children) as HTMLElement[];
-          let best = 0;
-          let bestDist = Infinity;
-          children.forEach((ch, i) => {
-            const d = Math.abs(ch.offsetLeft - el.scrollLeft);
-            if (d < bestDist) {
-              bestDist = d;
-              best = i;
-            }
-          });
-          setIndex(best);
-        }}
       >
-        {children}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={index}
+            initial={reducedMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: direction > 0 ? 28 : -28 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={reducedMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: direction > 0 ? -28 : 28 }}
+            transition={reducedMotion ? { duration: 0 } : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {slides[index]}
+          </motion.div>
+        </AnimatePresence>
       </div>
       {count > 1 && (
         <>
@@ -141,7 +133,7 @@ export function CarouselSlide({
 }) {
   return (
     <div
-      className={`min-w-[min(100%,22rem)] shrink-0 snap-start md:min-w-[28rem] ${className}`}
+      className={`w-full ${className}`}
       role="group"
       aria-roledescription="slide"
     >

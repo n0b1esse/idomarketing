@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import type { ReactNode } from "react";
+import { AnimateIn } from "@/components/ui/AnimateIn";
 
 interface RevealSectionProps {
   children: ReactNode;
@@ -8,27 +9,9 @@ interface RevealSectionProps {
 }
 
 export function RevealSection({ children, className = "" }: RevealSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("is-visible");
-          obs.unobserve(el);
-        }
-      },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.12 },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
   return (
-    <div ref={ref} className={`reveal ${className}`.trim()}>
+    <AnimateIn variant="fadeUp" className={className}>
       {children}
-    </div>
+    </AnimateIn>
   );
 }

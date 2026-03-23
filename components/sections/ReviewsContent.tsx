@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { Star } from "lucide-react";
@@ -8,6 +9,8 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Modal, ModalImage } from "@/components/ui/Modal";
 import { RevealSection } from "@/components/ui/RevealSection";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { fadeIn, fadeUp, staggerContainer } from "@/lib/motion";
 
 type Tab = "reviews" | "letters" | "certs";
 
@@ -44,6 +47,7 @@ export function ReviewsTabControls({ tab, onTab }: { tab: Tab; onTab: (t: Tab) =
 }
 
 export function ReviewsGrid() {
+  const reducedMotion = useReducedMotion();
   return (
     <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {TESTIMONIALS.map((t) => (
@@ -58,11 +62,20 @@ export function ReviewsGrid() {
                 <p className="text-sm text-[var(--color-muted)]">
                   {t.role}, {t.company}
                 </p>
-                <div className="mt-2 flex gap-0.5" aria-hidden>
+                <motion.div
+                  className="mt-2 flex gap-0.5"
+                  aria-hidden
+                  variants={reducedMotion ? {} : staggerContainer}
+                  initial={reducedMotion ? false : "hidden"}
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.8 }}
+                >
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-[var(--color-primary)] text-[var(--color-primary)]" />
+                    <motion.div key={i} variants={reducedMotion ? {} : fadeIn} transition={{ delay: i * 0.06 }}>
+                      <Star className="h-4 w-4 fill-[var(--color-primary)] text-[var(--color-primary)]" />
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">{t.text}</p>
@@ -143,13 +156,24 @@ export function CertificatesGallery() {
 
 export function ReviewsTabPanels() {
   const [tab, setTab] = useState<Tab>("reviews");
+  const reducedMotion = useReducedMotion();
   return (
     <section className="py-12 md:py-16">
       <ReviewsTabsShell>
         <ReviewsTabControls tab={tab} onTab={setTab} />
-        {tab === "reviews" && <ReviewsGrid />}
-        {tab === "letters" && <LettersGallery />}
-        {tab === "certs" && <CertificatesGallery />}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={tab}
+            variants={reducedMotion ? {} : fadeUp}
+            initial={reducedMotion ? false : "hidden"}
+            animate="visible"
+            exit={reducedMotion ? undefined : "hidden"}
+          >
+            {tab === "reviews" && <ReviewsGrid />}
+            {tab === "letters" && <LettersGallery />}
+            {tab === "certs" && <CertificatesGallery />}
+          </motion.div>
+        </AnimatePresence>
       </ReviewsTabsShell>
     </section>
   );

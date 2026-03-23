@@ -15,9 +15,9 @@ export function StatsBlock() {
               >
                 <p className="font-heading text-4xl font-semibold text-[var(--color-primary)] md:text-5xl">
                   {s.value % 1 !== 0 ? (
-                    <AnimatedCounter value={s.value} suffix={s.suffix} decimals={1} />
+                    <AnimatedCounter value={s.value} suffix={s.suffix} decimals={1} duration={1700} />
                   ) : (
-                    <AnimatedCounter value={s.value} suffix={s.suffix} />
+                    <AnimatedCounter value={s.value} suffix={s.suffix} duration={1700} />
                   )}
                 </p>
                 <p className="mt-2 text-sm text-[var(--color-muted)]">{s.label}</p>

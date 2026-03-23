@@ -1,5 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { buttonTap } from "@/lib/motion";
 
 type Variant = "primary" | "secondary" | "ghost";
 
@@ -30,17 +35,28 @@ export function Button({
   type = "button",
   ...rest
 }: ButtonProps) {
+  const reducedMotion = useReducedMotion();
   const cls = `${base} ${variants[variant]} ${className}`.trim();
   if (href) {
     return (
-      <Link href={href} className={cls}>
-        {children}
-      </Link>
+      <motion.span
+        className="inline-flex"
+        {...(reducedMotion ? {} : buttonTap)}
+      >
+        <Link href={href} className={cls}>
+          {children}
+        </Link>
+      </motion.span>
     );
   }
   return (
-    <button type={type} className={cls} {...rest}>
+    <motion.button
+      type={type}
+      className={cls}
+      {...(reducedMotion ? {} : buttonTap)}
+      {...rest}
+    >
       {children}
-    </button>
+    </motion.button>
   );
 }

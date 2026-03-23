@@ -1,11 +1,17 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { SERVICES } from "@/lib/data/site";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { RevealSection } from "@/components/ui/RevealSection";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { fadeUp, staggerContainer } from "@/lib/motion";
 
 export function ServicesPreview() {
   const items = SERVICES.slice(0, 4);
+  const reducedMotion = useReducedMotion();
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
@@ -23,19 +29,27 @@ export function ServicesPreview() {
             </Button>
           </div>
         </RevealSection>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <motion.div
+          className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+          variants={reducedMotion ? {} : staggerContainer}
+          initial={reducedMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {items.map((s) => (
-            <RevealSection key={s.id}>
-              <Card>
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-accent)]">
-                  <s.icon className="h-5 w-5" aria-hidden />
-                </span>
-                <h3 className="font-heading mt-4 text-lg font-semibold text-[var(--color-text)]">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{s.description}</p>
-              </Card>
-            </RevealSection>
+            <motion.div key={s.id} variants={reducedMotion ? {} : fadeUp}>
+              <RevealSection>
+                <Card>
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-accent)]">
+                    <s.icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <h3 className="font-heading mt-4 text-lg font-semibold text-[var(--color-text)]">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{s.description}</p>
+                </Card>
+              </RevealSection>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
