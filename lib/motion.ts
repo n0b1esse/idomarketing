@@ -76,5 +76,5 @@ export const cardHover: Variants = {
 export const buttonTap = {
   whileTap: { scale: 0.97 },
   whileHover: { scale: 1.02 },
-  transition: { duration: 0.15, ease: "easeOut" },
+  transition: { duration: 0.15 },
 };
