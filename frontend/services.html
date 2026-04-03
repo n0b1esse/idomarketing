@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Услуги - IDO Marketing</title>
+    <meta name="description" content="Услуги B2B маркетингового агентства: стратегия, SEO, SMM, performance и автоматизация." />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" defer src="js/main.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "provider": "IDO Marketing",
+        "name": "B2B Marketing Services"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="video-bg" aria-hidden="true">
+      <video autoplay muted loop playsinline poster="assets/bg-video-poster.webp">
+        <source src="assets/bg-video.mp4" type="video/mp4" />
+      </video>
+      <div class="video-bg__gradient"></div>
+    </div>
+    <header class="sticky-header">
+      <div class="container header-wrap">
+        <a class="logo" href="index.html">IDO MARKETING</a>
+        <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">=</button>
+        <nav class="main-nav" data-main-nav aria-label="Главная навигация">
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="portfolio.html">Кейсы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary" href="#consultation">Получить консультацию</a>
+      </div>
+    </header>
+
+    <main>
+      <nav class="breadcrumbs container" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a> / Услуги
+      </nav>
+
+      <section class="section">
+        <div class="container fade-in">
+          <h1 class="section-title">Услуги для устойчивого роста B2B</h1>
+          <p class="section-subtitle">Гибко подключаем команды и инструменты под ваши цели и KPI.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container" data-tabs>
+          <h2 class="section-title">Категории услуг</h2>
+          <div class="tabs">
+            <button class="tab-btn active" data-tab-button="strategy">Стратегия</button>
+            <button class="tab-btn" data-tab-button="seo">SEO</button>
+            <button class="tab-btn" data-tab-button="smm">SMM</button>
+            <button class="tab-btn" data-tab-button="performance">Performance</button>
+          </div>
+          <div class="tab-panel active card service-card" data-tab-panel="strategy">
+            <h3>Growth Strategy</h3>
+            <p>Аудит текущей системы, ICP, CJM, план каналов и финансовая модель маркетинга.</p>
+          </div>
+          <div class="tab-panel card service-card" data-tab-panel="seo">
+            <h3>SEO для B2B</h3>
+            <p>Техническая оптимизация, контент-план, линкбилдинг и улучшение конверсии страниц.</p>
+          </div>
+          <div class="tab-panel card service-card" data-tab-panel="smm">
+            <h3>Контент и SMM</h3>
+            <p>Контент-машина для экспертного бренда и lead nurturing в соцсетях.</p>
+          </div>
+          <div class="tab-panel card service-card" data-tab-panel="performance">
+            <h3>Performance</h3>
+            <p>Таргет и PPC-кампании с end-to-end аналитикой и контролем стоимости лида.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">FAQ по услугам (Accordion)</h2>
+          <div class="accordion-item">
+            <button class="accordion-header" data-accordion-toggle>Сколько времени до первых результатов?</button>
+            <div class="accordion-content">Обычно первые сигналы видны в течение 4-6 недель, устойчивый рост - через 2-4 месяца.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header" data-accordion-toggle>С какими нишами работаете?</button>
+            <div class="accordion-content">IT/SaaS, финтех, промышленность, логистика, EdTech и другие B2B-направления.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header" data-accordion-toggle>Есть ли фиксированный бюджет?</button>
+            <div class="accordion-content">Формируем бюджет индивидуально, исходя из целей роста и конкурентной среды.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Как мы работаем</h2>
+          <div class="steps-grid timeline">
+            <article class="timeline-step fade-in" data-step="Step 1">
+              <h3>Discovery</h3>
+              <p>Брифинг, аудит текущего маркетинга и формирование KPI.</p>
+            </article>
+            <article class="timeline-step fade-in" data-step="Step 2">
+              <h3>Strategy</h3>
+              <p>Разработка roadmap, каналов и гипотез.</p>
+            </article>
+            <article class="timeline-step fade-in" data-step="Step 3">
+              <h3>Execution</h3>
+              <p>Запуск кампаний, контента и автоматизаций.</p>
+            </article>
+            <article class="timeline-step fade-in" data-step="Step 4">
+              <h3>Scale</h3>
+              <p>Оптимизация, расширение каналов и масштабирование прибыли.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="consultation">
+        <div class="container cta-form fade-in">
+          <h2 class="section-title">Подобрать пакет услуг</h2>
+          <form class="form-grid" data-crm-form>
+            <input type="text" name="name" placeholder="Ваше имя" required />
+            <input type="text" name="contact" placeholder="Телефон или Email" required />
+            <select name="service" required>
+              <option value="">Выберите услугу</option>
+              <option value="strategy">Стратегия</option>
+              <option value="seo">SEO</option>
+              <option value="smm">SMM</option>
+              <option value="performance">Performance</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Отправить заявку</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-wrap">
+        <div class="footer-grid">
+          <div><h3 class="footer-title">IDO Marketing</h3><p>B2B агентство полного цикла.</p></div>
+          <div><h3 class="footer-title">Разделы</h3><ul class="footer-list"><li><a href="index.html">Главная</a></li><li><a href="portfolio.html">Кейсы</a></li></ul></div>
+          <div><h3 class="footer-title">Контакты</h3><ul class="footer-list"><li>hello@idomarketing.io</li><li>+7 (900) 000-00-00</li></ul></div>
+          <div><h3 class="footer-title">Документы</h3><ul class="footer-list"><li>Privacy Policy</li><li>Terms</li></ul></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="floating-chat" href="#" aria-label="Написать в WhatsApp">WA</a>
+    <div class="popup" data-exit-popup>
+      <div class="popup-card">
+        <button class="popup-close" data-popup-close aria-label="Закрыть">x</button>
+        <h3>Хотите персональный план роста?</h3>
+        <p>Оставьте контакты и мы подготовим дорожную карту именно под ваш бизнес.</p>
+        <a class="btn btn-primary" href="#consultation">Получить план</a>
+      </div>
+    </div>
+  </body>
+</html>

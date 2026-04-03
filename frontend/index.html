@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDO Marketing - B2B Marketing Agency</title>
+    <meta name="description" content="B2B маркетинговое агентство: лидогенерация, SEO, SMM и performance-маркетинг под KPI бизнеса." />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script type="module" defer src="js/main.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IDO Marketing",
+        "url": "https://example.com",
+        "logo": "https://example.com/assets/logo.webp"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="video-bg" aria-hidden="true">
+      <video autoplay muted loop playsinline poster="assets/bg-video-poster.webp">
+        <source src="assets/bg-video.mp4" type="video/mp4" />
+      </video>
+      <div class="video-bg__gradient"></div>
+    </div>
+    <header class="sticky-header">
+      <div class="container header-wrap">
+        <a class="logo" href="index.html">IDO MARKETING</a>
+        <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">=</button>
+        <nav class="main-nav" data-main-nav aria-label="Главная навигация">
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="portfolio.html">Кейсы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary" href="#consultation">Получить консультацию</a>
+      </div>
+    </header>
+
+    <main>
+      <nav class="breadcrumbs container" aria-label="Хлебные крошки">Главная</nav>
+
+      <section class="hero">
+        <div class="container fade-in">
+          <h1>Ускоряем B2B продажи с помощью data-driven маркетинга</h1>
+          <p>Строим предсказуемую систему лидогенерации: от стратегии и креатива до аналитики и CRM-синхронизации.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#consultation">Запросить аудит</a>
+            <a class="btn btn-secondary" href="portfolio.html">Смотреть кейсы</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="logo-strip">
+        <div class="logo-track">
+          <span class="logo-item">TechWorks</span>
+          <span class="logo-item">FinEdge</span>
+          <span class="logo-item">CloudLine</span>
+          <span class="logo-item">B2B Connect</span>
+          <span class="logo-item">NovaGroup</span>
+          <span class="logo-item">TechWorks</span>
+          <span class="logo-item">FinEdge</span>
+          <span class="logo-item">CloudLine</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Результаты в цифрах</h2>
+          <p class="section-subtitle">Метрики, за которые отвечаем контрактом.</p>
+          <div class="stats-grid">
+            <article class="card stat-card fade-in">
+              <div class="stat-value" data-counter-target="150" data-counter-suffix="+">0+</div>
+              <p>B2B клиентов</p>
+            </article>
+            <article class="card stat-card fade-in">
+              <div class="stat-value" data-counter-target="300" data-counter-suffix="%">0%</div>
+              <p>Средний рост ROI</p>
+            </article>
+            <article class="card stat-card fade-in">
+              <div class="stat-value" data-counter-target="40" data-counter-suffix="%">0%</div>
+              <p>Снижение CPL</p>
+            </article>
+            <article class="card stat-card fade-in">
+              <div class="stat-value" data-counter-target="12" data-counter-suffix=" мес.">0 мес.</div>
+              <p>Срок партнерства</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Performance Dashboard</h2>
+          <p class="section-subtitle">Динамика лидов, статусы воронки и эффективность каналов в реальном времени.</p>
+          <div class="dashboard-grid">
+            <article class="card dashboard-widget fade-in" data-reveal data-chart-widget data-chart-type="line">
+              <div class="dashboard-widget__head">
+                <h3>Динамика за месяц</h3>
+              </div>
+              <div class="dashboard-widget__canvas">
+                <div class="skeleton skeleton-chart" aria-hidden="true"></div>
+                <canvas aria-label="Линейный график динамики лидов" role="img"></canvas>
+              </div>
+            </article>
+            <article class="card dashboard-widget fade-in" data-reveal data-chart-widget data-chart-type="doughnut">
+              <div class="dashboard-widget__head">
+                <h3>Распределение статусов</h3>
+              </div>
+              <div class="dashboard-widget__canvas">
+                <div class="skeleton skeleton-chart" aria-hidden="true"></div>
+                <canvas aria-label="Кольцевая диаграмма распределения статусов" role="img"></canvas>
+              </div>
+            </article>
+            <article class="card dashboard-widget fade-in" data-reveal data-chart-widget data-chart-type="bar">
+              <div class="dashboard-widget__head">
+                <h3>Лиды по каналам</h3>
+              </div>
+              <div class="dashboard-widget__canvas">
+                <div class="skeleton skeleton-chart" aria-hidden="true"></div>
+                <canvas aria-label="Столбчатая диаграмма лидов по каналам" role="img"></canvas>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Ключевые услуги</h2>
+          <div class="services-grid">
+            <article class="card service-card fade-in">
+              <span class="badge">Strategy</span>
+              <h3>B2B Growth Strategy</h3>
+              <p>Формируем план роста с юнит-экономикой, ICP и воронкой.</p>
+            </article>
+            <article class="card service-card fade-in">
+              <span class="badge">SEO</span>
+              <h3>Enterprise SEO</h3>
+              <p>Техническая и контентная оптимизация для стабильного спроса.</p>
+            </article>
+            <article class="card service-card fade-in">
+              <span class="badge">Performance</span>
+              <h3>Target + PPC</h3>
+              <p>Запускаем рекламные кампании с прозрачной аналитикой ROI.</p>
+            </article>
+            <article class="card service-card fade-in">
+              <span class="badge">CRM</span>
+              <h3>Automation</h3>
+              <p>Интегрируем маркетинг с CRM и сквозной аналитикой.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Избранные кейсы</h2>
+          <div class="cases-grid">
+            <article class="card case-card fade-in">
+              <img src="assets/case-1.webp" loading="lazy" alt="Кейс SaaS компании" />
+              <h3>SaaS Platform</h3>
+              <p>+220% SQL за 6 месяцев через SEO + контент-хаб.</p>
+            </article>
+            <article class="card case-card fade-in">
+              <img src="assets/case-2.webp" loading="lazy" alt="Кейс промышленного бизнеса" />
+              <h3>Industrial B2B</h3>
+              <p>Снизили CPL на 37% в multi-channel performance.</p>
+            </article>
+            <article class="card case-card fade-in">
+              <img src="assets/case-3.webp" loading="lazy" alt="Кейс финтех компании" />
+              <h3>Fintech Enterprise</h3>
+              <p>Рост MQL в 3.1x благодаря ABM-стратегии.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="consultation">
+        <div class="container cta-form fade-in">
+          <h2 class="section-title">Обсудим ваш проект</h2>
+          <form class="form-grid" data-crm-form>
+            <input type="text" name="name" placeholder="Ваше имя" required />
+            <input type="text" name="contact" placeholder="Телефон или Email" required />
+            <select name="service" required>
+              <option value="">Выберите услугу</option>
+              <option value="strategy">Маркетинговая стратегия</option>
+              <option value="seo">SEO</option>
+              <option value="smm">SMM / контент</option>
+              <option value="performance">Performance маркетинг</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Отправить</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-wrap">
+        <div class="footer-grid">
+          <div>
+            <h3 class="footer-title">IDO Marketing</h3>
+            <p>Комплексный B2B-маркетинг с прозрачной отчетностью и акцентом на рост выручки.</p>
+          </div>
+          <div>
+            <h3 class="footer-title">Навигация</h3>
+            <ul class="footer-list">
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="portfolio.html">Кейсы</a></li>
+              <li><a href="reviews.html">Отзывы</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Контакты</h3>
+            <ul class="footer-list">
+              <li>hello@idomarketing.io</li>
+              <li>+7 (900) 000-00-00</li>
+              <li>Москва, Россия</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Документы</h3>
+            <ul class="footer-list">
+              <li>Политика конфиденциальности</li>
+              <li>Пользовательское соглашение</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="floating-chat" href="#" aria-label="Написать в WhatsApp">WA</a>
+
+    <div class="popup" data-exit-popup>
+      <div class="popup-card">
+        <button class="popup-close" data-popup-close aria-label="Закрыть">x</button>
+        <h3>Не уходите без стратегии роста</h3>
+        <p>Получите бесплатный mini-аудит маркетинга и рекомендации по быстрому росту лидов.</p>
+        <a class="btn btn-primary" href="#consultation">Получить аудит</a>
+      </div>
+    </div>
+  </body>
+</html>

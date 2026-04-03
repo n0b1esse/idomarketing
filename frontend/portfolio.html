@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кейсы - IDO Marketing</title>
+    <meta name="description" content="Портфолио B2B кейсов: Target, SEO, SMM и performance-проекты с измеримыми результатами." />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" defer src="js/main.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "IDO Marketing Case Studies"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="video-bg" aria-hidden="true">
+      <video autoplay muted loop playsinline poster="assets/bg-video-poster.webp">
+        <source src="assets/bg-video.mp4" type="video/mp4" />
+      </video>
+      <div class="video-bg__gradient"></div>
+    </div>
+    <header class="sticky-header">
+      <div class="container header-wrap">
+        <a class="logo" href="index.html">IDO MARKETING</a>
+        <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">=</button>
+        <nav class="main-nav" data-main-nav aria-label="Главная навигация">
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="portfolio.html">Кейсы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary" href="#consultation">Получить консультацию</a>
+      </div>
+    </header>
+
+    <main>
+      <nav class="breadcrumbs container" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a> / Портфолио
+      </nav>
+
+      <section class="section">
+        <div class="container fade-in">
+          <h1 class="section-title">Портфолио и кейсы</h1>
+          <p class="section-subtitle">Выберите направление и изучите реальные результаты проектов.</p>
+          <div class="tabs">
+            <button class="tab-btn active" data-filter="all">Все</button>
+            <button class="tab-btn" data-filter="target">Target</button>
+            <button class="tab-btn" data-filter="seo">SEO</button>
+            <button class="tab-btn" data-filter="smm">SMM</button>
+            <button class="tab-btn" data-filter="performance">Performance</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container portfolio-grid">
+          <article class="card case-card masonry-item fade-in" data-case-category="target">
+            <img src="assets/portfolio-1.webp" loading="lazy" alt="Target кейс" />
+            <h3>Target | SaaS</h3>
+            <p>Рост MQL в 2.4x за 90 дней.</p>
+          </article>
+          <article class="card case-card masonry-item fade-in" data-case-category="seo">
+            <img src="assets/portfolio-2.webp" loading="lazy" alt="SEO кейс" />
+            <h3>SEO | Industrial</h3>
+            <p>+180% органического трафика и +65% SQL.</p>
+          </article>
+          <article class="card case-card masonry-item fade-in" data-case-category="smm">
+            <img src="assets/portfolio-3.webp" loading="lazy" alt="SMM кейс" />
+            <h3>SMM | EdTech</h3>
+            <p>Экспертный бренд + стабильный приток лидов.</p>
+          </article>
+          <article class="card case-card masonry-item fade-in" data-case-category="performance">
+            <img src="assets/portfolio-4.webp" loading="lazy" alt="Performance кейс" />
+            <h3>Performance | Fintech</h3>
+            <p>Снижение CPA на 34% при росте объема заявок.</p>
+          </article>
+          <article class="card case-card masonry-item hidden fade-in" data-case-category="target">
+            <img src="assets/portfolio-5.webp" loading="lazy" alt="Target кейс 2" />
+            <h3>Target | Logistics</h3>
+            <p>ABM-подход для крупных корпоративных клиентов.</p>
+          </article>
+          <article class="card case-card masonry-item hidden fade-in" data-case-category="seo">
+            <img src="assets/portfolio-6.webp" loading="lazy" alt="SEO кейс 2" />
+            <h3>SEO | B2B Services</h3>
+            <p>Рост лидов с контента на 140% за 6 месяцев.</p>
+          </article>
+          <article class="card case-card masonry-item hidden fade-in" data-case-category="performance">
+            <img src="assets/portfolio-7.webp" loading="lazy" alt="Performance кейс 2" />
+            <h3>Performance | IT Outsource</h3>
+            <p>Сквозная аналитика и рост ROMI до 290%.</p>
+          </article>
+          <article class="card case-card masonry-item hidden fade-in" data-case-category="smm">
+            <img src="assets/portfolio-8.webp" loading="lazy" alt="SMM кейс 2" />
+            <h3>SMM | HR Tech</h3>
+            <p>Увеличение вовлеченности аудитории в 2.1x.</p>
+          </article>
+        </div>
+        <div class="container" style="text-align: center; margin-top: 1rem">
+          <button class="btn btn-secondary" data-load-more>Load More</button>
+        </div>
+      </section>
+
+      <section class="section" id="consultation">
+        <div class="container cta-form fade-in">
+          <h2 class="section-title">Нужен кейс под вашу нишу?</h2>
+          <form class="form-grid" data-crm-form>
+            <input type="text" name="name" placeholder="Ваше имя" required />
+            <input type="text" name="contact" placeholder="Телефон или Email" required />
+            <select name="service" required>
+              <option value="">Выберите направление</option>
+              <option value="target">Target</option>
+              <option value="seo">SEO</option>
+              <option value="smm">SMM</option>
+              <option value="performance">Performance</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Получить релевантные кейсы</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-wrap">
+        <div class="footer-grid">
+          <div><h3 class="footer-title">IDO Marketing</h3><p>Превращаем маркетинг в управляемый канал роста.</p></div>
+          <div><h3 class="footer-title">Навигация</h3><ul class="footer-list"><li><a href="services.html">Услуги</a></li><li><a href="reviews.html">Отзывы</a></li></ul></div>
+          <div><h3 class="footer-title">Контакты</h3><ul class="footer-list"><li>hello@idomarketing.io</li><li>+7 (900) 000-00-00</li></ul></div>
+          <div><h3 class="footer-title">Реквизиты</h3><ul class="footer-list"><li>ИНН/ОГРН placeholder</li><li>Политики</li></ul></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="floating-chat" href="#" aria-label="Написать в WhatsApp">WA</a>
+    <div class="popup" data-exit-popup>
+      <div class="popup-card">
+        <button class="popup-close" data-popup-close aria-label="Закрыть">x</button>
+        <h3>Подберем кейс под ваш рынок</h3>
+        <p>Покажем релевантные примеры и спрогнозируем возможный ROI.</p>
+        <a class="btn btn-primary" href="#consultation">Запросить</a>
+      </div>
+    </div>
+  </body>
+</html>
